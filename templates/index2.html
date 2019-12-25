@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To TextUtils</title>
+</head>
+<body>
+<center><h1>Welcome to the text analyzer! Enter your text below...</h1></center>
+
+<form action='/analyze' method='GET'>
+    <textarea name="text" style="margin: 0px; width: 1420px; height: 124px;" spellcheck="false"></textarea>
+    <br>
+
+    <input type="checkbox" name="removepunc"> Remove Punctuations<br>
+    <input type="checkbox" name="fullcaps"> UPPERCASE<br>
+    <input type="checkbox" name="newlineremover"> New Line Remover<br>
+    <input type="checkbox" name="extraspaceremover"> Extra Space Remover<br>
+    <input type="checkbox" name="charcount"> Character Counter<br>
+    <button type='submit'>Analyze Text</button>
+
+</form>
+</body>
+</html>
