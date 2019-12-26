@@ -19,15 +19,15 @@ def index(request):
 
 def analyze(request):
     #get the text
-    djtext = request.GET.get('text', 'default')
+    djtext = request.POST.get('text', 'default')
     analyzed = ""
 
     #checkbox values
-    removepunc = request.GET.get('removepunc', 'off')
-    fullcaps = request.GET.get('fullcaps', 'off')
-    newlineremover = request.GET.get('newlineremover', 'off')
-    extraspaceremover = request.GET.get('extraspaceremover', 'off')
-    charcount = request.GET.get('charcount', 'off')
+    removepunc = request.POST.get('removepunc', 'off')
+    fullcaps = request.POST.get('fullcaps', 'off')
+    newlineremover = request.POST.get('newlineremover', 'off')
+    extraspaceremover = request.POST.get('extraspaceremover', 'off')
+    charcount = request.POST.get('charcount', 'off')
 
     # print(djtext)
     # print(removepunc)
@@ -59,7 +59,7 @@ def analyze(request):
     #new line remover starts
     if newlineremover == "on":
         for char in djtext :
-            if char != "\n":
+            if char != "\n" and char != "\r":
                 analyzed = analyzed + char
         params = {'purpose': 'New Line Removed', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
