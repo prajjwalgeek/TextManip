@@ -5,17 +5,8 @@ from django.shortcuts import render
 # def freqLinks(request):
     # return HttpResponse('''<h2><a href="http://www.prajjwalmishra.com" target="blank">PrajjwalMishra's Website</a></h2>''')
 
-
-# def about(request):
-#     return HttpResponse("Hello, Prajjwal! This is your about view!")
-
 def index(request):
     return render(request, 'index.html')
-
-# def firstTemplate(request):
-#     pyaaraVariable = {'name':'Prajjwal', 'nation':'Indian'}
-#     return render(request, 'first.html', pyaaraVariable)
-    # return HttpResponse("Hello, Prajjwal! This is your first view!")
 
 def analyze(request):
     #get the text
@@ -82,16 +73,3 @@ def analyze(request):
     if (removepunc!="on" and fullcaps!="on" and newlineremover!="on" and extraspaceremover!="on" and charcount!="on"):
         return HttpResponse("Please select a valid option")
     return render(request, 'analyze.html', params)
-
-# def capfirst(request):
-#     return HttpResponse("capitalize first")
-#
-# def newlineremove(request):
-#     return HttpResponse("New Line Remove")
-#
-#
-# def spaceremove(request):
-#     return HttpResponse("space remover <a href='/'>Back</a>")
-#
-# def charcount(request):
-#     return HttpResponse("charcount ")
