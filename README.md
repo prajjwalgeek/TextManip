@@ -9,3 +9,8 @@ TextManip does basic manipulations to text like:
 ->Remove redundant new lines
 
 I have also used Bootstrap to make the interface beautiful & responsive.
+
+
+### To run this application
+
+`python manage.py runserver`
